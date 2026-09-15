@@ -1,0 +1,3 @@
+<?php
+namespace App\Models; use Illuminate\Database\Eloquent\Model;
+class Exercise extends Model { protected $fillable=['user_id','name','primary_muscle_group_id','equipment','tracking_type','instructions','personal_notes','is_custom']; protected function casts():array{return ['is_custom'=>'boolean'];} public function primaryMuscleGroup(){return $this->belongsTo(MuscleGroup::class,'primary_muscle_group_id');} public function secondaryMuscleGroups(){return $this->belongsToMany(MuscleGroup::class,'exercise_secondary_muscle_group');} public function scopeVisibleTo($q,$userId){return $q->where(fn($x)=>$x->whereNull('user_id')->orWhere('user_id',$userId));} }

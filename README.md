@@ -1,5 +1,7 @@
 # GYM Fit — personal gym tracker
 
+Current release: **v0.1**
+
 A phone-first personal fitness web app with a **Laravel 13 REST API**, **MySQL**, and a **React + TypeScript** SPA. The API is versioned under `/api/v1` and uses Laravel Sanctum-compatible authentication so the same backend can later serve a native mobile client.
 
 ## Architecture overview
@@ -130,5 +132,4 @@ The feature suite covers user isolation, idempotent workout saving/editing, date
 
 Set real secrets only in `.env`, use HTTPS, set appropriate `SESSION_DOMAIN` / `SANCTUM_STATEFUL_DOMAINS`, turn off `APP_DEBUG`, and run Laravel behind a production web server. The repository intentionally excludes subscriptions, social feeds, nutrition tracking, AI coaching, queues/Redis infrastructure that the current product does not need.
 
-See [`docs/API.md`](docs/API.md) for the REST contract and examples.
-# Gym-fit-app
+See [`docs/API.md`](docs/API.md) for the REST contract and examples, and [`CHANGELOG.md`](CHANGELOG.md) for release notes.
